@@ -1,6 +1,5 @@
 package com.capstone.polls_service.entity;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import jakarta.persistence.Column;
@@ -17,25 +16,24 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @Entity
-@Table(name="polls")
+@Table(name = "polls_entity")
 
 public class PollsEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="polls_id")
+    @Column(name = "poll_id")
     private int pollId;
 
-    @Column(name="poll_start")
-    private LocalDateTime pollStart;
+    @Column(name = "community_id")
+    private int communityId;
 
-    @Column(name="poll_end")
-    private LocalDate pollEnd;
+    @Column(name = "poll_start_date")
+    private LocalDateTime pollStartDate;
 
-    @Column(name="poll_result")
-    private int pollResult;
+    @Column(name = "poll_result")
+    private String pollResult;
 
-    @Column(name="request_id")
-    private int requestId;
+    @Column(name = "poll_end")
+    private boolean pollEnd;
 }
-      
